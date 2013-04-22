@@ -1,0 +1,18 @@
+<div class="dropdown-submenu">
+<ul class="unstyled">
+<{foreach item=slang from=$block.select_langs}>
+	<li>
+		<input type="radio" onclick="SelLang_jumpMenu('parent',this,0)" name="<{$block.select_name}>" value="<{$slang.value}>" <{if $slang.selected}>checked<{/if}> />
+		&nbsp;<{$slang.name}>
+	</li>
+<{/foreach}>
+</ul>
+</div>
+<script type="text/javascript">
+	<!--
+	function SelLang_jumpMenu(targ,selObj,restore){
+		eval(targ+".location='<{$block.pagenquery}>"+selObj.value+"'");
+		if (restore) selObj.selectedIndex=0;
+	}
+	-->
+</script>

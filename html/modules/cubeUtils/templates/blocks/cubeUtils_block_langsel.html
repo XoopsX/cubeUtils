@@ -1,0 +1,13 @@
+<select onchange="SelLang_jumpMenu('parent',this,0)" name="<{$block.select_name}>">
+	<{foreach item=slang from=$block.select_langs}>
+	<option <{if $slang.selected}>selected="selected"<{/if}> value="<{$slang.value}>"><{$slang.name}></option>
+	<{/foreach}>
+</select>
+<script type="text/javascript">
+<!--
+function SelLang_jumpMenu(targ,selObj,restore){
+	eval(targ+".location='<{$block.pagenquery}>"+selObj.options[selObj.selectedIndex].value+"'");
+	if (restore) selObj.selectedIndex=0;
+}
+-->
+</script>

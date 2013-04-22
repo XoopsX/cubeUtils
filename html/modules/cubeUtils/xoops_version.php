@@ -13,7 +13,7 @@ if(!defined('XOOPS_ROOT_PATH')) exit ;
 $mydirname = basename(dirname( __FILE__ )) ;
 
 $modversion['name'] = $mydirname;
-$modversion['version'] = '0.80';
+$modversion['version'] = '0.81';
 $modversion['description'] = 'XOOPS Cube 2.1.x Utilities';
 $modversion['credits'] = 'NobuNobu';
 $modversion['author'] = 'http://www.nobunobu.com/';
@@ -77,6 +77,7 @@ $modversion['blocks'][2]['file'] = 'cubeUtils_langsel.php';
 $modversion['blocks'][2]['name'] = _MI_CUBE_UTILS_BNAME2;
 $modversion['blocks'][2]['description'] = 'Shows Select Language';
 $modversion['blocks'][2]['show_func'] = 'b_cubeUtils_langsel_show';
+$modversion['blocks'][2]['template'] = 'cubeUtils_block_langsel.html';
 $modversion['blocks'][2]['show_all_module'] = true;
 // Blocks
 $modversion['blocks'][3]['file'] = 'cubeUtils_igoogle.php';
@@ -93,4 +94,13 @@ $modversion['blocks'][4]['show_func'] = 'b_cubeUtils_whatsnew_show';
 $modversion['blocks'][4]['edit_func'] = 'b_cubeUtils_whatsnew_edit';
 $modversion['blocks'][4]['options'] = '5';
 $modversion['blocks'][4]['template'] = 'cubeUtils_block_whatsnew.html';
-?>
+// Blocks
+
+$modversion['blocks'][5] = array(
+	'file' => 'cubeUtils_langsel.php',
+	'name' => _MI_CUBE_UTILS_BNAME2,
+	'description' => 'Shows Select Language',
+	'show_func' => 'b_cubeUtils_langsel_show',
+	'template' => 'cubeUtils_block_langsel_radio.html',
+	'show_all_module' => true
+);

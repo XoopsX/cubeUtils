@@ -30,31 +30,19 @@ function b_cubeUtils_langsel_show($options) {
         $pagenquery = $_SERVER['PHP_SELF'].'?'.$langquery.'&'.CUBE_UTILS_ML_PARAM_NAME.'=';
         $pagenquery = str_replace('?&','?',$pagenquery);
     }
-
     //show a drop down list to select language
-
-    $block['content'] = "<script type='text/javascript'>
-<!--
-function SelLang_jumpMenu(targ,selObj,restore){
-eval(targ+\".location='".$pagenquery."\"+selObj.options[selObj.selectedIndex].value+\"'\");
-if (restore) selObj.selectedIndex=0;
-}
--->
-</script>";
-    $block['content'] .= '<div style="align=\'center\';"><select name="'.CUBE_UTILS_ML_PARAM_NAME.'" onchange="SelLang_jumpMenu(\'parent\',this,0)">';
-    $languages = XoopsLists::getLangList();
+	$block['pagenquery'] = $pagenquery;
+    $block['select_name'] = CUBE_UTILS_ML_PARAM_NAME;
     $langnames = explode(',',CUBE_UTILS_ML_LANGDESCS);
     $langs = explode(',',CUBE_UTILS_ML_LANGS);
+	$block['select_langs'] = array();
     for ($i=0; $i < count($langs); $i++) {
-        $block['content'] .= '<option value="'.$langs[$i].'"';
-        if ($langs[$i] == _LANGCODE){
-        	$block['content'] .= " selected=\"selected\"";
-        }
-        $block['content'] .= '>'.$langnames[$i].'</option>';
+	    $block['select_langs'][] = array(
+		    'value' => $langs[$i],
+		    'name' => $langnames[$i],
+		    'selected' => $langs[$i] == _LANGCODE ? true : false,
+	    );
     }
-
-    $block['content'] .= '</select></div>';
-
     return $block;
 }
-?>
+
