@@ -1,6 +1,6 @@
 <?php
 define('_MI_CUBE_UTILS_BNAME1', 'ログイン');
-define('_MI_CUBE_UTILS_BNAME2', '言語選択');
+define('_MI_CUBE_UTILS_BNAME2', 'Select Language');
 define('_MI_CUBE_UTILS_BNAME3', 'iGoogle Gadget用ブロック');
 define('_MI_CUBE_UTILS_BNAME4', '更新情報');
 // Config titles
