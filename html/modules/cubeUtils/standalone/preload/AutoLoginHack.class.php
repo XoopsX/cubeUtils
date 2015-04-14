@@ -105,7 +105,7 @@ class AutoLoginHack extends XCube_ActionFilter
                 }
                 //Verify UserID and Password in Cookie
                 $member_handler =& xoops_gethandler('member');
-                $myts =& MyTextSanitizer::getInstance();
+                (method_exists('MyTextSanitizer', 'sGetInstance') and $myts =& MyTextSanitizer::sGetInstance()) || $myts =& MyTextSanitizer::getInstance();
                 $uname = $myts->stripSlashesGPC($_COOKIE['autologin_uname']);
                 $pass = $myts->stripSlashesGPC($_COOKIE['autologin_pass']);
 
