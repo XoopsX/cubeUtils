@@ -13,7 +13,7 @@ if(!defined('XOOPS_ROOT_PATH')) exit ;
 $mydirname = basename(dirname( __FILE__ )) ;
 
 $modversion['name'] = $mydirname;
-$modversion['version'] = '0.80';
+$modversion['version'] = '0.81';
 $modversion['description'] = 'XOOPS Cube 2.1.x Utilities';
 $modversion['credits'] = 'NobuNobu';
 $modversion['author'] = 'http://www.nobunobu.com/';
